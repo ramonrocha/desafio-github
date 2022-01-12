@@ -1,4 +1,63 @@
 COMANDOS GIT BASH
 
+$ openssl sha1 arquivo
+gera chave ssl para o arquivo (qualquer modificacao, muda a chave)
+
+$ git init
+Inicializa um novo repositorio local
+
+$ ls -a
+lista toda pasta, incluindo arquivos ocultos
+
+$ git config --list
+mostra todas as configuracoes do Git
+
+$ git config --global user.email "email do Github"
+$ git config --global user.name usernameGithub
+configura email e username do Github, de forma global ao Git
+assim os commits ficam registrados com o profile do Github
+
+$ git status
+mostra o status das pastas, arquivos e objetos no repositório
+
+$ git add .
+$ git add *
+$ git add -A
+atualiza o indice do git
+
+$ git commit -m "mensagem"
+faz o commit colocando uma mensagem
+
 $ git clone URL HTTPS
 clona o repositorio github no repositorio git da maquina local
+
+$ git push origin main
+empurra as atualizacoes (commits) para o repositorio github
+
+
+CRIACAO DE CHAVE SSH
+--------------------
+$ ssh-keygen -t ed25519 - C email
+cria chave SSH pessoal - preferencialmente use o mesmo email do Github
+informe uma senha
+pasta padrao da chave: c:\users\<usuario>\.ssh
+id_ed25519 chave privada
+id_ed25519.pub chave publica (usada no Github)
+
+$ cat id_ed25519.pub
+c:\users\usuario\.ssh
+mostra a chave a ser copiada para colocar no Github
+No Github: profile \ Settings \ SSH and GPG Kerys
+
+$ eval $(ssh-agent -s)
+inicia o SSH Agent
+
+$ ssh-add id_ed25519
+adiciona a chave privada ao agente SSH
+vai pedir a senha
+
+$ git clone <caminho SSH>
+responder Y para continuar conectando
+clona o repositorio github no repositorio git da maquina local
+--------------------
+
