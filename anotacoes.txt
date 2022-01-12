@@ -1,0 +1,4 @@
+COMANDOS GIT BASH
+
+$ git clone URL HTTPS
+clona o repositorio github no repositorio git da maquina local
